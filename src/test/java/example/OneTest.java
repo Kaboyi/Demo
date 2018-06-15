@@ -14,21 +14,21 @@ import java.util.List;
 
 public class OneTest {
 
+  public static final File OUT_FILE = new File("out.txt");
+
   @Before
   public void beforeFoo(){
-    File file = new File("out.txt");
-    if(file.exists()){
-      file.delete();
+    if(OUT_FILE.exists()){
+      OUT_FILE.delete();
     }
   }
 
   private List<String> readOutFile() {
-    File file = new File("out.txt");
     FileInputStream is;
     List<String> list = new ArrayList<String>();
     try {
-      if (file.length() != 0) {
-        is = new FileInputStream(file);
+      if (OUT_FILE.length() != 0) {
+        is = new FileInputStream(OUT_FILE);
         InputStreamReader streamReader = new InputStreamReader(is);
         BufferedReader reader = new BufferedReader(streamReader);
         String line;
