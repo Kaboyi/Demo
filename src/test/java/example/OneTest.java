@@ -51,6 +51,7 @@ public class OneTest {
     One one = new One();
     one.foo();
     List<String> list = readOutFile();
+    System.out.println(list);
     assertEquals("freets", list.get(2));
   }
 
